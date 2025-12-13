@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Íconos para Vista de Calendario</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 40px;
+            background: #f0f4f8;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #0f172a;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #64748b;
+            margin-bottom: 40px;
+        }
+
+        .category {
+            margin-bottom: 50px;
+        }
+
+        .category h2 {
+            color: #0f172a;
+            border-bottom: 3px solid #0ea5e9;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 30px;
+        }
+
+        .icon-card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            transition: transform 0.2s;
+        }
+
+        .icon-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .icon-name {
+            font-weight: 600;
+            color: #0f172a;
+            text-align: center;
+        }
+
+        .icon-desc {
+            font-size: 12px;
+            color: #64748b;
+            text-align: center;
+        }
+
+        .preview-bg {
+            background: linear-gradient(135deg, #bae6fd 0%, #0ea5e9 100%);
+            padding: 20px;
+            border-radius: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📅 Íconos para Vista de Calendario</h1>
+        <p class="subtitle">Gestión de tiempo, eventos y organización</p>
+
+        <!-- TIEMPO -->
+        <div class="category">
+            <h2>⏰ Gestión de Tiempo</h2>
+            <div class="grid">
+                
+                <!-- Reloj de Arena -->
+                <div class="icon-card">
+                    <div class="preview-bg">
+                        <svg width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Marco superior -->
+                            <rect x="25" y="15" width="30" height="4" rx="2" fill="#0284c7"/>
+                            
+                            <!-- Vidrio superior -->
+                            <path d="M 28,19 L 40,35 L 52,19 Z" fill="#22d3ee" opacity="0.3" stroke="#0284c7" stroke-width="2"/>
+                            
+                            <!-- Centro -->
+                            <ellipse cx="40" cy="40" rx="3" ry="2" fill="#0284c7"/>
+                            
+                            <!-- Vidrio inferior -->
+                            <path d="M 28,61 L 40,45 L 52,61 Z" fill="#0ea5e9" opacity="0.5" stroke="#0284c7" stroke-width="2"/>
+                            
+                            <!-- Arena cayendo -->
+                            <path d="M 40,35 L 40,45" stroke="#0ea5e9" stroke-width="2" stroke-linecap="round"/>
+                            <circle cx="40" cy="47" r="2" fill="#0ea5e9"/>
+                            
+                            <!-- Marco inferior -->
+                            <rect x="25" y="61" width="30" height="4" rx="2" fill="#0284c7"/>
+                            
+                            <!-- Contorno lateral -->
+                            <line x1="28" y1="19" x2="28" y2="61" stroke="#0284c7" stroke-width="2"/>
+                            <line x1="52" y1="19" x2="52" y2="61" stroke="#0284c7" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <span class="icon-name">Reloj de Arena</span>
+                    <span class="icon-desc">Duración</span>
+                </div>
+
+                <!-- Cronómetro -->
+                <div class="icon-card">
+                    <div class="preview-bg">
+                        <svg width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Botón superior -->
+                            <rect x="35" y="12" width="10" height="6" rx="2" fill="#0284c7"/>
+                            <circle cx="40" cy="15" r="3" fill="#22d3ee"/>
+                            
+                            <!-- Cuerpo -->
+                            <circle cx="40" cy="45" r="25" fill="#0ea5e9" stroke="#0284c7" stroke-width="2.5"/>
+                            
+                            <!-- Manecillas -->
+                            <line x1="40" y1="45" x2="40" y2="28" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+                            <line x1="40" y1="45" x2="52" y2="45" stroke="#22d3ee" stroke-width="2.5" stroke-linecap="round"/>
+                            
+                            <!-- Centro -->
+                            <circle cx="40" cy="45" r="4" fill="#0284c7"/>
+                            
+                            <!-- Marcas -->
+                            <circle cx="40" cy="22" r="2" fill="#ffffff"/>
+                            <circle cx="63" cy="45" r="2" fill="#ffffff"/>
+                            <circle cx="40" cy="68" r="2" fill="#ffffff"/>
+                            <circle cx="17" cy="45" r="2" fill="#ffffff"/>
+                        </svg>
+                    </div>
+                    <span class="icon-name">Cronómetro</span>
+                    <span class="icon-desc">Tiempo exacto</span>
+                </div>
+
+                <!-- Timeline -->
+                <div class="icon-card">
+                    <div class="preview-bg">
+                        <svg width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Línea principal -->
+                            <line x1="15" y1="40" x2="65" y2="40" stroke="#0284c7" stroke-width="3" stroke-linecap="round"/>
+                            
+                            <!-- Puntos de eventos -->
+                            <circle cx="20" cy="40" r="5" fill="#22d3ee" stroke="#0284c7" stroke-width="2"/>
+                            <circle cx="35" cy="40" r="6" fill="#0ea5e9" stroke="#0284c7" stroke-width="2"/>
+                            <circle cx="50" cy="40" r="5" fill="#22d3ee" stroke="#0284c7" stroke-width="2"/>
+                            <circle cx="60" cy="40" r="4" fill="#0ea5e9" stroke="#0284c7" stroke-width="2"/>
+                            
+                            <!-- Líneas verticales indicadoras -->
+                            <line x1="20" y1="20" x2="20" y2="35" stroke="#22d3ee" stroke-width="2" stroke-linecap="round"/>
+                            <line x1="35" y1="15" x2="35" y2="34" stroke="#0ea5e9" stroke-width="2" stroke-linecap="round"/>
+                            <line x1="50" y1="20" x2="50" y2="35" stroke="#22d3ee" stroke-width="2" stroke-linecap="round"/>
+                            <line x1="60" y1="25" x2="60" y2="36" stroke="#0ea5e9" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <span class="icon-name">Timeline</span>
+                    <span class="icon-desc">Línea de tiempo</span>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- RECORDATORIOS Y NOTIFICACIONES -->
+        <div class="category">
+            <h2>🔔 Recordatorios</h2>
+            <div class="grid">
+                
+                <!-- Campana con Punto -->
+                <div class="icon-card">
+                    <div class="preview-bg">
+                        <svg width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Campana -->
+                            <path d="M 40,20 Q 36,20 36,24 L 33,30 Q 28,38 28,48 L 52,48 Q 52,38 47,30 L 44,24 Q 44,20 40,20" 
+                                  fill="#0ea5e9" stroke="#0284c7" stroke-width="2.5"/>
+                            
+                            <!-- Asa superior -->
+                            <circle cx="40" cy="18" r="3" fill="#22d3ee" stroke="#0284c7" stroke-width="2"/>
+                            
+                            <!-- Base -->
+                            <path d="M 28,48 Q 28,52 31,54 Q 34,56 40,56 Q 46,56 49,54 Q 52,52 52,48" 
+                                  fill="none" stroke="#0284c7" stroke-width="2"/>
+                            <circle cx="40" cy="58" r="3" fill="#0284c7"/>
+                            
+                            <!-- Notificación (punto rojo) -->
+                            <circle cx="55" cy="25" r="6" fill="#ef4444" stroke="#ffffff" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <span class="icon-name">Notificación</span>
+                    <span class="icon-desc">Alerta activa</span>
+                </div>
+
+                <!-- Alarma -->
+                <div class="icon-card">
+                    <div class="preview-bg">
+                        <svg width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Reloj -->
+                            <circle cx="40" cy="45" r="22" fill="#0ea5e9" stroke="#0284c7" stroke-width="2.5"/>
+                            
+                            <!-- Manecillas -->
+                            <line x1="40" y1="45" x2="40" y2="30" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+                            <line x1="40" y1="45" x2="50" y2="45" stroke="#22d3ee" stroke-width="2.5" stroke-linecap="round"/>
+                            <circle cx="40" cy="45" r="3" fill="#0284c7"/>
+                            
+                            <!-- Campanas superiores -->
+                            <path d="M 25,20 Q 20,15 18,18 L 22,25" fill="none" stroke="#0284c7" stroke-width="2.5" stroke-linecap="round"/>
+                            <path d="M 55,20 Q 60,15 62,18 L 58,25" fill="none" stroke="#0284c7" stroke-width="2.5" stroke-linecap="round"/>
+                            
+                            <!-- Patas -->
+                            <line x1="25" y1="65" x2="18" y2="72" stroke="#0284c7" stroke-width="2.5" stroke-linecap="round"/>
+                            <line x1="55" y1="65" x2="62" y2="72" stroke="#0284c7" stroke-width="2.5" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <span class="icon-name">Alarma</span>
+                    <span class="icon-desc">Recordatorio</span>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- EVENTOS Y REUNIONES -->
+        <div class="category">
+            <h2>👥 Eventos y Reuniones</h2>
+            <div class="grid">
+                
+                <!-- Grupo de Personas -->
+                <div class="icon-card">
+                    <div class="preview-bg">
+                        <svg width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Persona 1 -->
+                            <circle cx="30" cy="30" r="8" fill="#0ea5e9" stroke="#0284c7" stroke-width="2"/>
+                            <path d="M 18,55 Q 18,40 30,40 Q 42,40 42,55 L 42,60 L 18,60 Z" 
+                                  fill="#22d3ee" stroke="#0284c7" stroke-width="2"/>
+                            
+                            <!-- Persona 2 (centro) -->
+                            <circle cx="40" cy="35" r="9" fill="#0ea5e9" stroke="#0284c7" stroke-width="2"/>
+                            <path d="M 27,62 Q 27,46 40,46 Q 53,46 53,62 L 53,68 L 27,68 Z" 
+                                  fill="#0ea5e9" stroke="#0284c7" stroke-width="2"/>
+                            
+                            <!-- Persona 3 -->
+                            <circle cx="50" cy="30" r="8" fill="#0ea5e9" stroke="#0284c7" stroke-width="2"/>
+                            <path d="M 38,55 Q 38,40 50,40 Q 62,40 62,55 L 62,60 L 38,60 Z" 
+                                  fill="#22d3ee" stroke="#0284c7" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <span class="icon-name">Reunión</span>
+                    <span class="icon-desc">Múltiples participantes</span>
+                </div>
+
+                <!-- Pin de Ubicación -->
+                <div class="icon-card">
+                    <div class="preview-bg">
+                        <svg width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Pin -->
+                            <path d="M 40,15 Q 28,15 28,30 Q 28,45 40,65 Q 52,45 52,30 Q 52,15 40,15 Z" 
+                                  fill="#0ea5e9" stroke="#0284c7" stroke-width="2.5"/>
+                            
+                            <!-- Centro -->
+                            <circle cx="40" cy="30" r="8" fill="#ffffff" stroke="#0284c7" stroke-width="2"/>
+                            <circle cx="40" cy="30" r="4" fill="#22d3ee"/>
+                        </svg>
+                    </div>
+                    <span class="icon-name">Ubicación</span>
+                    <span class="icon-desc">Lugar del evento</span>
+                </div>
+
+                <!-- Video Call -->
+                <div class="icon-card">
+                    <div class="preview-bg">
+                        <svg width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Pantalla -->
+                            <rect x="15" y="25" width="40" height="30" rx="3" fill="#0ea5e9" stroke="#0284c7" stroke-width="2.5"/>
+                            
+                            <!-- Cámara lateral -->
+                            <path d="M 55,35 L 65,28 L 65,52 L 55,45 Z" fill="#22d3ee" stroke="#0284c7" stroke-width="2"/>
+                            
+                            <!-- Persona en pantalla -->
+                            <circle cx="35" cy="35" r="6" fill="#ffffff" opacity="0.8"/>
+                            <path d="M 25,50 Q 25,42 35,42 Q 45,42 45,50" fill="#ffffff" opacity="0.8"/>
+                        </svg>
+                    </div>
+                    <span class="icon-name">Videollamada</span>
+                    <span class="icon-desc">Reunión virtual</span>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ORGANIZACIÓN -->
+        <div class="category">
+            <h2>📋 Organización</h2>
+            <div class="grid">
+                
+                <!-- Etiqueta/Tag -->
+                <div class="icon-card">
+                    <div class="preview-bg">
+                        <svg width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Etiqueta -->
+                            <path d="M 20,25 L 45,25 L 60,40 L 45,55 L 20,55 Z" 
+                                  fill="#0ea5e9" stroke="#0284c7" stroke-width="2.5"/>
+                            
+                            <!-- Agujero -->
+                            <circle cx="30" cy="40" r="5" fill="#ffffff" stroke="#0284c7" stroke-width="2"/>
+                            
+                            <!-- Líneas de texto -->
+                            <line x1="38" y1="35" x2="48" y2="35" stroke="#22d3ee" stroke-width="2" stroke-linecap="round"/>
+                            <line x1="38" y1="40" x2="52" y2="40" stroke="#22d3ee" stroke-width="2" stroke-linecap="round"/>
+                            <line x1="38" y1="45" x2="50" y2="45" stroke="#22d3ee" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <span class="icon-name">Etiqueta</span>
+                    <span class="icon-desc">Categoría</span>
+                </div>
+
+                <!-- Checklist -->
+                <div class="icon-card">
+                    <div class="preview-bg">
+                        <svg width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Papel -->
+                            <rect x="20" y="15" width="40" height="55" rx="3" fill="#ffffff" stroke="#0284c7" stroke-width="2.5"/>
+                            
+                            <!-- Checks -->
+                            <circle cx="28" cy="28" r="4" fill="none" stroke="#0ea5e9" stroke-width="2"/>
+                            <polyline points="26,28 28,30 32,26" stroke="#0ea5e9" stroke-width="2" fill="none" stroke-linecap="round"/>
+                            
+                            <circle cx="28" cy="40" r="4" fill="none" stroke="#0ea5e9" stroke-width="2"/>
+                            <polyline points="26,40 28,42 32,38" stroke="#0ea5e9" stroke-width="2" fill="none" stroke-linecap="round"/>
+                            
+                            <circle cx="28" cy="52" r="4" fill="none" stroke="#0ea5e9" stroke-width="2"/>
+                            
+                            <!-- Líneas de texto -->
+                            <line x1="36" y1="28" x2="52" y2="28" stroke="#64748b" stroke-width="2" stroke-linecap="round"/>
+                            <line x1="36" y1="40" x2="52" y2="40" stroke="#64748b" stroke-width="2" stroke-linecap="round"/>
+                            <line x1="36" y1="52" x2="52" y2="52" stroke="#64748b" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <span class="icon-name">Checklist</span>
+                    <span class="icon-desc">Tareas</span>
+                </div>
+
+                <!-- Nota/Documento -->
+                <div class="icon-card">
+                    <div class="preview-bg">
+                        <svg width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Papel -->
+                            <path d="M 25,15 L 25,65 L 55,65 L 55,30 L 45,15 Z" fill="#ffffff" stroke="#0284c7" stroke-width="2.5"/>
+                            
+                            <!-- Esquina doblada -->
+                            <path d="M 45,15 L 45,25 Q 45,30 50,30 L 55,30" fill="#22d3ee" stroke="#0284c7" stroke-width="2"/>
+                            
+                            <!-- Líneas de texto -->
+                            <line x1="30" y1="38" x2="50" y2="38" stroke="#0ea5e9" stroke-width="2" stroke-linecap="round"/>
+                            <line x1="30" y1="44" x2="50" y2="44" stroke="#0ea5e9" stroke-width="2" stroke-linecap="round"/>
+                            <line x1="30" y1="50" x2="48" y2="50" stroke="#0ea5e9" stroke-width="2" stroke-linecap="round"/>
+                            <line x1="30" y1="56" x2="45" y2="56" stroke="#0ea5e9" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <span class="icon-name">Notas</span>
+                    <span class="icon-desc">Descripción</span>
+                </div>
+
+                <!-- Repetir -->
+                <div class="icon-card">
+                    <div class="preview-bg">
+                        <svg width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Flecha circular 1 -->
+                            <path d="M 50,25 Q 60,25 65,30 Q 70,35 70,45 Q 70,55 65,60" 
+                                  stroke="#0ea5e9" stroke-width="3" fill="none" stroke-linecap="round"/>
+                            <path d="M 65,60 L 70,55 L 65,50" fill="none" stroke="#0ea5e9" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                            
+                            <!-- Flecha circular 2 -->
+                            <path d="M 30,55 Q 20,55 15,50 Q 10,45 10,35 Q 10,25 15,20" 
+                                  stroke="#22d3ee" stroke-width="3" fill="none" stroke-linecap="round"/>
+                            <path d="M 15,20 L 10,25 L 15,30" fill="none" stroke="#22d3ee" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                            
+                            <!-- Centro -->
+                            <circle cx="40" cy="40" r="8" fill="#0284c7"/>
+                            <circle cx="40" cy="40" r="4" fill="#22d3ee"/>
+                        </svg>
+                    </div>
+                    <span class="icon-name">Recurrente</span>
+                    <span class="icon-desc">Se repite</span>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- HORARIOS -->
+        <div class="category">
+            <h2>🌓 Horarios</h2>
+            <div class="grid">
+                
+                <!-- Sol (Día) -->
+                <div class="icon-card">
+                    <div class="preview-bg">
+                        <svg width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Sol -->
+                            <circle cx="40" cy="40" r="15" fill="#fbbf24" stroke="#f59e0b" stroke-width="2"/>
+                            
+                            <!-- Brillo interior -->
+                            <circle cx="40" cy="40" r="10" fill="#fef3c7" opacity="0.6"/>
+                            
+                            <!-- Rayos -->
+                            <line x1="40" y1="15" x2="40" y2="22" stroke="#fbbf24" stroke-width="3" stroke-linecap="round"/>
+                            <line x1="40" y1="58" x2="40" y2="65" stroke="#fbbf24" stroke-width="3" stroke-linecap="round"/>
+                            <line x1="15" y1="40" x2="22" y2="40" stroke="#fbbf24" stroke-width="3" stroke-linecap="round"/>
+                            <line x1="58" y1="40" x2="65" y2="40" stroke="#fbbf24" stroke-width="3" stroke-linecap="round"/>
+                            
+                            <line x1="23" y1="23" x2="28" y2="28" stroke="#fbbf24" stroke-width="3" stroke-linecap="round"/>
+                            <line x1="52" y1="52" x2="57" y2="57" stroke="#fbbf24" stroke-width="3" stroke-linecap="round"/>
+                            <line x1="23" y1="57" x2="28" y2="52" stroke="#fbbf24" stroke-width="3" stroke-linecap="round"/>
+                            <line x1="52" y1="28" x2="57" y2="23" stroke="#fbbf24" stroke-width="3" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <span class="icon-name">Día</span>
+                    <span class="icon-desc">Eventos diurnos</span>
+                </div>
+
+                <!-- Luna (Noche) -->
+                <div class="icon-card">
+                    <div class="preview-bg">
+                        <svg width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Luna -->
+                            <path d="M 45,20 Q 35,25 35,40 Q 35,55 45,60 Q 55,58 60,50 Q 50,52 42,45 Q 35,38 38,28 Q 40,22 45,20 Z" 
+                                  fill="#0ea5e9" stroke="#0284c7" stroke-width="2.5"/>
+                            
+                            <!-- Cráteres -->
+                            <circle cx="48" cy="35" r="3" fill="#22d3ee" opacity="0.4"/>
+                            <circle cx="52" cy="45" r="4" fill="#22d3ee" opacity="0.3"/>
+                            <circle cx="45" cy="48" r="2.5" fill="#22d3ee" opacity="0.4"/>
+                            
+                            <!-- Estrellas -->
+                            <path d="M 25,25 L 26,28 L 29,28 L 27,30 L 28,33 L 25,31 L 22,33 L 23,30 L 21,28 L 24,28 Z" fill="#fbbf24"/>
+                            <path d="M 62,28 L 63,30 L 65,30 L 63.5,31.5 L 64,33.5 L 62,32 L 60,33.5 L 60.5,31.5 L 59,30 L 61,30 Z" fill="#fef3c7"/>
+                        </svg>
+                    </div>
+                    <span class="icon-name">Noche</span>
+                    <span class="icon-desc">Eventos nocturnos</span>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

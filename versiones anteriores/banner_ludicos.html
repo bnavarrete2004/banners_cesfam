@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banner Gestión de Actividades</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 40px;
+            background: #f0f4f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .banner-container {
+            max-width: 900px;
+            width: 100%;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            background: #ffffff;
+        }
+
+        .banner-container svg {
+            display: block;
+            width: 100%;
+            height: auto;
+            will-change: opacity;
+        }
+
+        /* Optimización de rendering */
+        .float-element,
+        .float-slow,
+        .float-fast,
+        .wave-layer {
+            will-change: transform;
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+        }
+
+        /* Animación suave de las olas */
+        .wave-layer {
+            transform-origin: center;
+            animation: floatWave 6s ease-in-out infinite alternate;
+        }
+        .wave-layer:nth-child(odd) { animation-duration: 7s; }
+        .wave-layer:nth-child(even) { animation-duration: 9s; animation-direction: alternate-reverse; }
+
+        /* Animación flotante para decorativos */
+        .float-element {
+            animation: floatUp 5s ease-in-out infinite;
+            animation-fill-mode: both;
+        }
+
+        .float-slow {
+            animation: floatUp 7s ease-in-out infinite;
+            animation-fill-mode: both;
+        }
+
+        .float-fast {
+            animation: floatUp 4s ease-in-out infinite;
+            animation-fill-mode: both;
+        }
+
+        /* Fade-in suave al cargar */
+        svg {
+            animation: fadeIn 0.6s ease-out forwards;
+            opacity: 0;
+        }
+        
+        @keyframes floatWave {
+            0% { transform: translateX(0px) skewX(0deg); }
+            100% { transform: translateX(15px) skewX(2deg); }
+        }
+
+        @keyframes floatUp {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-6px); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="banner-container">
+        <svg viewBox="0 0 900 180" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+            <defs>
+                <!-- GRADIENTE CALIPSO -->
+                <linearGradient id="calipsoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#22d3ee;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#0284c7;stop-opacity:1" />
+                </linearGradient>
+
+                <filter id="shadow" filterUnits="userSpaceOnUse" x="0" y="0" width="900" height="180">
+                    <feDropShadow dx="0" dy="2" stdDeviation="4" flood-opacity="0.1"/>
+                </filter>
+
+                <filter id="iconShadow" filterUnits="userSpaceOnUse" x="0" y="0" width="200" height="200">
+                    <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#0ea5e9" flood-opacity="0.4"/>
+                </filter>
+
+                <!-- Filtro de blur suave para elementos de fondo -->
+                <filter id="softBlur">
+                    <feGaussianBlur stdDeviation="1.5"/>
+                </filter>
+            </defs>
+
+            <!-- Fondo blanco -->
+            <rect width="900" height="180" fill="#ffffff"/>
+
+            <!-- === TEXTOS === -->
+            <g transform="translate(160, 0)">
+                <text x="0" y="70" font-family="Arial, sans-serif" font-size="32" font-weight="700" fill="#0f172a" letter-spacing="-0.5">
+                    Gestión de
+                </text>
+                <text x="0" y="105" font-family="Arial, sans-serif" font-size="32" font-weight="700" fill="#0284c7" letter-spacing="-0.5">
+                    Actividades
+                </text>
+                
+                <text x="0" y="135" font-family="Arial, sans-serif" font-size="14" fill="#64748b">
+                    Gestiona tus ausencias eficientemente
+                </text>
+            </g>
+
+            <!-- === ICONO PRINCIPAL (MEJORADO) === -->
+<g transform="translate(40, 45)">
+    <!-- Fondo del icono (Mismo estilo) -->
+    <rect width="90" height="90" rx="20" fill="url(#calipsoGradient)" filter="url(#iconShadow)"/>
+    
+    <!-- Megáfono centrado y rotado -->
+    <g transform="translate(45, 42) rotate(-15)">
+        
+        <!-- Ondas de sonido (Diseño curvo y moderno) -->
+        <g stroke="white" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.9">
+            <path d="M 28,-5 Q 35,5 28,15" opacity="0.8"/>
+            <path d="M 34,-10 Q 45,5 34,20" opacity="0.6"/>
+            <path d="M 40,-15 Q 55,5 40,25" opacity="0.4"/>
+        </g>
+
+        <!-- Mango (Curvo y ergonómico) -->
+        <path d="M -5,15 Q -5,28 -12,28 Q -18,28 -15,18 L -8,14 Z" fill="#e2e8f0"/>
+
+        <!-- Cuerpo principal (Cono con perspectiva) -->
+        <path d="M -18,2 L 20,-10 L 20,20 L -18,10 Z" fill="#ffffff"/>
+        
+        <!-- Sombra sutil inferior en el cuerpo para volumen -->
+        <path d="M -18,10 L 20,20 L 20,12 L -18,6 Z" fill="#cbd5e1" opacity="0.3"/>
+
+        <!-- Parte trasera (Tapa) -->
+        <ellipse cx="-18" cy="6" rx="4" ry="7" fill="#f1f5f9"/>
+
+        <!-- Boca del megáfono (Borde) -->
+        <ellipse cx="20" cy="5" rx="6" ry="15" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+        
+        <!-- Interior oscuro (Profundidad) -->
+        <ellipse cx="20" cy="5" rx="4" ry="12" fill="#334155"/>
+
+        <!-- Botón superior -->
+        <rect x="-10" y="-1" width="6" height="4" rx="1" fill="#cbd5e1" transform="translate(0, -4)"/>
+    </g>
+</g>
+
+            <!-- === OLAS DINÁMICAS === -->
+            <g opacity="0.95">
+                <path class="wave-layer" d="M 550,0 C 600,60 520,120 580,180 L 900,180 L 900,0 Z" fill="#bae6fd" opacity="0.3"/>
+                <path class="wave-layer" d="M 620,0 C 600,50 660,130 630,180 L 900,180 L 900,0 Z" fill="#7dd3fc" opacity="0.4"/>
+                <path class="wave-layer" d="M 690,0 C 740,50 650,120 710,180 L 900,180 L 900,0 Z" fill="#38bdf8" opacity="0.5"/>
+                <path class="wave-layer" d="M 760,0 C 730,60 800,110 770,180 L 900,180 L 900,0 Z" fill="#0ea5e9" opacity="0.6"/>
+                <path class="wave-layer" d="M 820,0 C 860,60 780,120 830,180 L 900,180 L 900,0 Z" fill="#0284c7" opacity="0.7"/>
+            </g>
+
+            <!-- === DECORACIONES SOBRE LAS OLAS === -->
+
+            <!-- Burbujas dispersas grupo 1 (zona clara) - Formas redondas -->
+            <g opacity="0.5">
+                <!-- Burbuja grande -->
+                <g class="float-element">
+                    <circle cx="585" cy="65" r="16" fill="#ffffff" fill-opacity="0.2" stroke="#7dd3fc" stroke-width="2"/>
+                    <circle cx="579" cy="60" r="5" fill="#ffffff" opacity="0.6"/>
+                    <circle cx="589" cy="67" r="2.5" fill="#ffffff" opacity="0.4"/>
+                </g>
+                
+                <!-- Burbuja mediana arriba -->
+                <g class="float-slow" style="animation-delay: 0.8s;">
+                    <circle cx="620" cy="45" r="11" fill="#ffffff" fill-opacity="0.18" stroke="#bae6fd" stroke-width="1.5"/>
+                    <circle cx="615" cy="41" r="3" fill="#ffffff" opacity="0.5"/>
+                </g>
+                
+                <!-- Burbuja pequeña abajo -->
+                <circle cx="565" cy="105" r="8" fill="#ffffff" fill-opacity="0.15" stroke="#7dd3fc" stroke-width="1.5" class="float-fast" style="animation-delay: 1.2s;"/>
+
+                <!-- Burbuja pequeña lateral -->
+                <circle cx="605" cy="90" r="7" fill="#ffffff" fill-opacity="0.16" stroke="#7dd3fc" stroke-width="1.5" class="float-element" style="animation-delay: 0.4s;"/>
+
+                <!-- Burbuja mediana dispersa -->
+                <g class="float-slow" style="animation-delay: 1.6s;">
+                    <circle cx="560" cy="75" r="9" fill="#ffffff" fill-opacity="0.17" stroke="#bae6fd" stroke-width="1.5"/>
+                    <circle cx="557" cy="72" r="2.5" fill="#ffffff" opacity="0.5"/>
+                </g>
+            </g>
+
+            <!-- Burbujas dispersas grupo 2 (zona media) -->
+            <g opacity="0.45">
+                <!-- Burbuja grande central -->
+                <g class="float-slow" style="animation-delay: 1.5s;">
+                    <circle cx="715" cy="90" r="14" fill="#ffffff" fill-opacity="0.22" stroke="#38bdf8" stroke-width="2"/>
+                    <circle cx="709" cy="85" r="4" fill="#ffffff" opacity="0.6"/>
+                    <circle cx="717" cy="92" r="2" fill="#ffffff" opacity="0.45"/>
+                </g>
+                
+                <!-- Burbuja mediana abajo derecha -->
+                <g class="float-element" style="animation-delay: 0.6s;">
+                    <circle cx="740" cy="115" r="10" fill="#ffffff" fill-opacity="0.17" stroke="#7dd3fc" stroke-width="1.5"/>
+                    <circle cx="736" cy="111" r="2.5" fill="#ffffff" opacity="0.5"/>
+                </g>
+                
+                <!-- Burbuja pequeña arriba -->
+                <circle cx="690" cy="55" r="7" fill="#ffffff" fill-opacity="0.14" stroke="#38bdf8" stroke-width="1.5" class="float-fast" style="animation-delay: 1.8s;"/>
+
+                <!-- Burbuja mediana izquierda -->
+                <circle cx="670" cy="125" r="9" fill="#ffffff" fill-opacity="0.13" stroke="#7dd3fc" stroke-width="1.5" class="float-slow" style="animation-delay: 0.3s;"/>
+
+                <!-- Burbuja pequeña dispersa -->
+                <circle cx="755" cy="70" r="6" fill="#ffffff" fill-opacity="0.15" stroke="#38bdf8" stroke-width="1" class="float-element" style="animation-delay: 1.1s;"/>
+            </g>
+
+            <!-- Burbujas dispersas grupo 3 (zona oscura) -->
+            <g opacity="0.6">
+                <!-- Burbuja grande -->
+                <g class="float-fast" style="animation-delay: 0.8s;">
+                    <circle cx="845" cy="125" r="13" fill="#ffffff" fill-opacity="0.28" stroke="#e0f2fe" stroke-width="2"/>
+                    <circle cx="839" cy="120" r="4" fill="#ffffff" opacity="0.7"/>
+                    <circle cx="847" cy="127" r="2.5" fill="#ffffff" opacity="0.5"/>
+                </g>
+                
+                <!-- Burbuja mediana arriba izquierda -->
+                <g class="float-element" style="animation-delay: 1.3s;">
+                    <circle cx="810" cy="85" r="10" fill="#ffffff" fill-opacity="0.23" stroke="#bae6fd" stroke-width="1.5"/>
+                    <circle cx="806" cy="82" r="2.5" fill="#ffffff" opacity="0.6"/>
+                </g>
+
+                <!-- Burbuja pequeña arriba derecha -->
+                <circle cx="875" cy="105" r="7" fill="#ffffff" fill-opacity="0.2" stroke="#e0f2fe" stroke-width="1.5" class="float-slow" style="animation-delay: 0.5s;"/>
+
+                <!-- Burbuja mediana abajo -->
+                <g class="float-fast" style="animation-delay: 1.7s;">
+                    <circle cx="825" cy="145" r="9" fill="#ffffff" fill-opacity="0.25" stroke="#bae6fd" stroke-width="1.5"/>
+                    <circle cx="822" cy="142" r="2" fill="#ffffff" opacity="0.6"/>
+                </g>
+
+                <!-- Burbuja pequeña centro -->
+                <circle cx="860" cy="65" r="6" fill="#ffffff" fill-opacity="0.22" stroke="#e0f2fe" stroke-width="1" class="float-element" style="animation-delay: 0.9s;"/>
+
+                <!-- Burbuja pequeña lateral -->
+                <circle cx="795" cy="110" r="8" fill="#ffffff" fill-opacity="0.24" stroke="#bae6fd" stroke-width="1.5" class="float-slow" style="animation-delay: 1.9s;"/>
+            </g>
+
+            <!-- Burbujas adicionales dispersas -->
+            <g opacity="0.35">
+                <circle cx="635" cy="135" r="7" fill="#ffffff" fill-opacity="0.12" stroke="#38bdf8" stroke-width="1" class="float-element" style="animation-delay: 2s;"/>
+                <circle cx="680" cy="42" r="6" fill="#ffffff" fill-opacity="0.15" stroke="#7dd3fc" stroke-width="1" class="float-slow" style="animation-delay: 0.9s;"/>
+                <circle cx="770" cy="140" r="8" fill="#ffffff" fill-opacity="0.18" stroke="#38bdf8" stroke-width="1" class="float-fast" style="animation-delay: 1.4s;"/>
+            </g>
+
+            <!-- Planta 1 (sobre ola clara) -->
+            <g transform="translate(575, 120)" opacity="0.4" class="float-element">
+                <path d="M 0,40 Q -2,25 -3,15 Q -2,8 0,0" 
+                      stroke="#0ea5e9" stroke-width="2" fill="none" opacity="0.5"/>
+                <ellipse cx="-8" cy="10" rx="5" ry="9" fill="#7dd3fc" fill-opacity="0.3" transform="rotate(-25 -8 10)"/>
+                <ellipse cx="8" cy="18" rx="6" ry="10" fill="#38bdf8" fill-opacity="0.25" transform="rotate(20 8 18)"/>
+                <ellipse cx="-5" cy="28" rx="4" ry="7" fill="#7dd3fc" fill-opacity="0.3" transform="rotate(-35 -5 28)"/>
+            </g>
+
+            <!-- Arbusto pequeño (zona clara) -->
+            <g transform="translate(555, 95)" opacity="0.35" class="float-slow" style="animation-delay: 1.6s;">
+                <ellipse cx="0" cy="0" rx="10" ry="14" fill="#7dd3fc" fill-opacity="0.2" transform="rotate(10)"/>
+                <ellipse cx="-8" cy="-5" rx="7" ry="10" fill="#38bdf8" fill-opacity="0.18" transform="rotate(-20 -8 -5)"/>
+                <ellipse cx="8" cy="3" rx="8" ry="11" fill="#7dd3fc" fill-opacity="0.2" transform="rotate(25 8 3)"/>
+            </g>
+
+            <!-- Planta ramificada (zona clara) -->
+            <g transform="translate(610, 135)" opacity="0.4" class="float-element" style="animation-delay: 0.7s;">
+                <path d="M 0,30 Q -1,20 0,10 Q 1,5 0,0" stroke="#0ea5e9" stroke-width="1.8" fill="none" opacity="0.5"/>
+                <path d="M 0,15 Q -5,12 -8,10" stroke="#0ea5e9" stroke-width="1.5" fill="none" opacity="0.4"/>
+                <path d="M 0,20 Q 5,17 8,15" stroke="#0ea5e9" stroke-width="1.5" fill="none" opacity="0.4"/>
+                <ellipse cx="-8" cy="10" rx="4" ry="6" fill="#7dd3fc" fill-opacity="0.3" transform="rotate(-30 -8 10)"/>
+                <ellipse cx="8" cy="15" rx="4" ry="6" fill="#38bdf8" fill-opacity="0.25" transform="rotate(30 8 15)"/>
+            </g>
+
+            <!-- Planta 2 (sobre ola media) -->
+            <g transform="translate(720, 50)" opacity="0.5" class="float-slow" style="animation-delay: 2s;">
+                <path d="M 0,50 Q -3,30 -4,20 Q -2,10 0,0" 
+                      stroke="#0284c7" stroke-width="2.5" fill="none" opacity="0.4"/>
+                <ellipse cx="-10" cy="12" rx="7" ry="12" fill="#38bdf8" fill-opacity="0.25" transform="rotate(-28 -10 12)"/>
+                <ellipse cx="10" cy="22" rx="8" ry="14" fill="#0ea5e9" fill-opacity="0.2" transform="rotate(22 10 22)"/>
+                <ellipse cx="-7" cy="35" rx="6" ry="10" fill="#38bdf8" fill-opacity="0.25" transform="rotate(-38 -7 35)"/>
+            </g>
+
+            <!-- Arbusto denso (zona media) -->
+            <g transform="translate(670, 115)" opacity="0.4" class="float-element" style="animation-delay: 1.1s;">
+                <ellipse cx="0" cy="0" rx="12" ry="16" fill="#38bdf8" fill-opacity="0.22"/>
+                <ellipse cx="-10" cy="-6" rx="9" ry="12" fill="#0ea5e9" fill-opacity="0.2" transform="rotate(-25 -10 -6)"/>
+                <ellipse cx="10" cy="4" rx="10" ry="13" fill="#38bdf8" fill-opacity="0.22" transform="rotate(30 10 4)"/>
+                <ellipse cx="0" cy="-10" rx="7" ry="9" fill="#7dd3fc" fill-opacity="0.18" transform="rotate(5)"/>
+            </g>
+
+            <!-- Ramitas finas (zona media) -->
+            <g transform="translate(695, 80)" opacity="0.35" class="float-fast" style="animation-delay: 0.5s;">
+                <path d="M 0,25 Q 2,15 0,0" stroke="#0284c7" stroke-width="1.5" fill="none" opacity="0.4"/>
+                <path d="M 0,12 Q -4,10 -6,8" stroke="#0284c7" stroke-width="1.2" fill="none" opacity="0.35"/>
+                <ellipse cx="-6" cy="8" rx="3" ry="5" fill="#38bdf8" fill-opacity="0.25" transform="rotate(-35 -6 8)"/>
+            </g>
+
+            <!-- Planta Grande (sobre ola oscura) -->
+            <g transform="translate(800, 30)" opacity="0.8" class="float-element">
+                <path d="M 0,80 Q -5,50 -6,35 Q -4,20 0,0" 
+                      stroke="#e0f2fe" stroke-width="2" fill="none" opacity="0.6"/>
+                <ellipse cx="-12" cy="20" rx="8" ry="14" fill="#ffffff" fill-opacity="0.3" stroke="#bae6fd" stroke-width="1.5" transform="rotate(-30 -12 20)"/>
+                <ellipse cx="12" cy="30" rx="9" ry="16" fill="#ffffff" fill-opacity="0.2" stroke="#bae6fd" stroke-width="1.5" transform="rotate(25 12 30)"/>
+                <ellipse cx="-8" cy="45" rx="7" ry="12" fill="#ffffff" fill-opacity="0.3" stroke="#bae6fd" stroke-width="1.5" transform="rotate(-40 -8 45)"/>
+            </g>
+
+            <!-- Arbusto tropical (zona oscura) -->
+            <g transform="translate(770, 100)" opacity="0.5" class="float-slow" style="animation-delay: 1.4s;">
+                <ellipse cx="0" cy="0" rx="14" ry="18" fill="#0ea5e9" fill-opacity="0.25" stroke="#0284c7" stroke-width="1"/>
+                <ellipse cx="-12" cy="-8" rx="10" ry="14" fill="#38bdf8" fill-opacity="0.22" transform="rotate(-30 -12 -8)"/>
+                <ellipse cx="12" cy="5" rx="11" ry="15" fill="#0ea5e9" fill-opacity="0.25" transform="rotate(35 12 5)"/>
+            </g>
+
+            <!-- Helechos pequeños (zona oscura) -->
+            <g transform="translate(845, 60)" opacity="0.45" class="float-element" style="animation-delay: 0.9s;">
+                <path d="M 0,35 Q 1,20 0,0" stroke="#bae6fd" stroke-width="1.8" fill="none" opacity="0.5"/>
+                <ellipse cx="-5" cy="8" rx="4" ry="7" fill="#ffffff" fill-opacity="0.25" transform="rotate(-25 -5 8)"/>
+                <ellipse cx="5" cy="15" rx="4" ry="7" fill="#e0f2fe" fill-opacity="0.2" transform="rotate(25 5 15)"/>
+                <ellipse cx="-4" cy="22" rx="3" ry="6" fill="#ffffff" fill-opacity="0.25" transform="rotate(-30 -4 22)"/>
+                <ellipse cx="4" cy="28" rx="3" ry="6" fill="#e0f2fe" fill-opacity="0.2" transform="rotate(30 4 28)"/>
+            </g>
+
+            <!-- Grupo de hojas bajas (zona oscura) -->
+            <g transform="translate(865, 145)" opacity="0.4" class="float-slow" style="animation-delay: 1.8s;">
+                <ellipse cx="0" cy="0" rx="8" ry="6" fill="#bae6fd" fill-opacity="0.3" transform="rotate(15)"/>
+                <ellipse cx="-7" cy="3" rx="6" ry="5" fill="#e0f2fe" fill-opacity="0.25" transform="rotate(-20 -7 3)"/>
+                <ellipse cx="7" cy="2" rx="7" ry="5" fill="#bae6fd" fill-opacity="0.3" transform="rotate(25 7 2)"/>
+            </g>
+
+            <!-- Hojas flotantes individuales - AMPLIADAS -->
+            <g opacity="0.35">
+                <!-- === ZONA CLARA === -->
+                <!-- Hoja 1 -->
+                <g transform="translate(600, 40) rotate(15)" class="float-slow">
+                    <ellipse cx="0" cy="0" rx="8" ry="14" fill="#38bdf8" fill-opacity="0.2" stroke="#0ea5e9" stroke-width="1"/>
+                    <line x1="0" y1="-8" x2="0" y2="8" stroke="#0284c7" stroke-width="1" opacity="0.4"/>
+                </g>
+
+                <!-- Hoja 2 -->
+                <g transform="translate(565, 65) rotate(-25)" class="float-element" style="animation-delay: 0.6s;">
+                    <ellipse cx="0" cy="0" rx="6" ry="10" fill="#7dd3fc" fill-opacity="0.18" stroke="#38bdf8" stroke-width="1"/>
+                    <line x1="0" y1="-6" x2="0" y2="6" stroke="#0ea5e9" stroke-width="0.8" opacity="0.4"/>
+                </g>
+
+                <!-- Hoja 3 -->
+                <g transform="translate(625, 105) rotate(60)" class="float-fast" style="animation-delay: 1.3s;">
+                    <ellipse cx="0" cy="0" rx="9" ry="5" fill="#38bdf8" fill-opacity="0.16" stroke="#0ea5e9" stroke-width="0.8"/>
+                    <line x1="0" y1="-3" x2="0" y2="3" stroke="#0284c7" stroke-width="0.7" opacity="0.3"/>
+                </g>
+
+                <!-- Hoja 4 -->
+                <g transform="translate(590, 120) rotate(-40)" class="float-slow" style="animation-delay: 0.9s;">
+                    <ellipse cx="0" cy="0" rx="7" ry="11" fill="#7dd3fc" fill-opacity="0.19" stroke="#38bdf8" stroke-width="1"/>
+                    <line x1="0" y1="-7" x2="0" y2="7" stroke="#0ea5e9" stroke-width="0.9" opacity="0.4"/>
+                </g>
+
+                <!-- Hoja 5 -->
+                <g transform="translate(555, 50) rotate(35)" class="float-element" style="animation-delay: 1.6s;">
+                    <ellipse cx="0" cy="0" rx="5" ry="9" fill="#38bdf8" fill-opacity="0.17" stroke="#0ea5e9" stroke-width="0.9"/>
+                    <line x1="0" y1="-6" x2="0" y2="6" stroke="#0284c7" stroke-width="0.8" opacity="0.35"/>
+                </g>
+
+                <!-- Hoja 6 -->
+                <g transform="translate(615, 75) rotate(-10)" class="float-fast" style="animation-delay: 0.3s;">
+                    <ellipse cx="0" cy="0" rx="6" ry="12" fill="#7dd3fc" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
+                    <line x1="0" y1="-8" x2="0" y2="8" stroke="#0ea5e9" stroke-width="0.9" opacity="0.4"/>
+                </g>
+
+                <!-- === ZONA MEDIA === -->
+                <!-- Hoja 7 -->
+                <g transform="translate(750, 135) rotate(-20)" class="float-element" style="animation-delay: 1.2s;">
+                    <ellipse cx="0" cy="0" rx="6" ry="11" fill="#0ea5e9" fill-opacity="0.18" stroke="#0284c7" stroke-width="1"/>
+                    <line x1="0" y1="-7" x2="0" y2="7" stroke="#0284c7" stroke-width="0.8" opacity="0.5"/>
+                </g>
+
+                <!-- Hoja 8 -->
+                <g transform="translate(735, 70) rotate(35)" class="float-slow" style="animation-delay: 0.4s;">
+                    <ellipse cx="0" cy="0" rx="9" ry="15" fill="#38bdf8" fill-opacity="0.2" stroke="#0ea5e9" stroke-width="1.2"/>
+                    <line x1="0" y1="-10" x2="0" y2="10" stroke="#0284c7" stroke-width="1" opacity="0.45"/>
+                </g>
+
+                <!-- Hoja 9 -->
+                <g transform="translate(710, 150) rotate(-45)" class="float-element" style="animation-delay: 1.7s;">
+                    <ellipse cx="0" cy="0" rx="7" ry="12" fill="#0ea5e9" fill-opacity="0.17" stroke="#0284c7" stroke-width="1"/>
+                    <line x1="0" y1="-8" x2="0" y2="8" stroke="#0284c7" stroke-width="0.9" opacity="0.4"/>
+                </g>
+
+                <!-- Hoja 10 -->
+                <g transform="translate(680, 95) rotate(20)" class="float-fast" style="animation-delay: 0.7s;">
+                    <ellipse cx="0" cy="0" rx="8" ry="13" fill="#38bdf8" fill-opacity="0.19" stroke="#0ea5e9" stroke-width="1"/>
+                    <line x1="0" y1="-9" x2="0" y2="9" stroke="#0284c7" stroke-width="0.9" opacity="0.4"/>
+                </g>
+
+                <!-- Hoja 11 -->
+                <g transform="translate(665, 55) rotate(-30)" class="float-slow" style="animation-delay: 1.4s;">
+                    <ellipse cx="0" cy="0" rx="6" ry="10" fill="#7dd3fc" fill-opacity="0.18" stroke="#38bdf8" stroke-width="0.9"/>
+                    <line x1="0" y1="-6" x2="0" y2="6" stroke="#0ea5e9" stroke-width="0.8" opacity="0.4"/>
+                </g>
+
+                <!-- Hoja 12 -->
+                <g transform="translate(700, 115) rotate(50)" class="float-element" style="animation-delay: 0.5s;">
+                    <ellipse cx="0" cy="0" rx="7" ry="11" fill="#0ea5e9" fill-opacity="0.2" stroke="#0284c7" stroke-width="1"/>
+                    <line x1="0" y1="-7" x2="0" y2="7" stroke="#0284c7" stroke-width="0.8" opacity="0.45"/>
+                </g>
+
+                <!-- Hoja 13 -->
+                <g transform="translate(760, 100) rotate(-15)" class="float-fast" style="animation-delay: 1.9s;">
+                    <ellipse cx="0" cy="0" rx="5" ry="9" fill="#38bdf8" fill-opacity="0.16" stroke="#0ea5e9" stroke-width="0.9"/>
+                    <line x1="0" y1="-6" x2="0" y2="6" stroke="#0284c7" stroke-width="0.7" opacity="0.35"/>
+                </g>
+
+                <!-- === ZONA OSCURA === -->
+                <!-- Hoja 14 -->
+                <g transform="translate(865, 85) rotate(35)" class="float-fast" style="animation-delay: 0.5s;">
+                    <ellipse cx="0" cy="0" rx="7" ry="12" fill="#ffffff" fill-opacity="0.25" stroke="#e0f2fe" stroke-width="1.2"/>
+                    <line x1="0" y1="-8" x2="0" y2="8" stroke="#bae6fd" stroke-width="1" opacity="0.6"/>
+                </g>
+
+                <!-- Hoja 15 -->
+                <g transform="translate(825, 50) rotate(-15)" class="float-slow" style="animation-delay: 1.5s;">
+                    <ellipse cx="0" cy="0" rx="5" ry="9" fill="#e0f2fe" fill-opacity="0.22" stroke="#bae6fd" stroke-width="1"/>
+                    <line x1="0" y1="-6" x2="0" y2="6" stroke="#bae6fd" stroke-width="0.8" opacity="0.55"/>
+                </g>
+
+                <!-- Hoja 16 -->
+                <g transform="translate(855, 130) rotate(70)" class="float-element" style="animation-delay: 0.8s;">
+                    <ellipse cx="0" cy="0" rx="10" ry="6" fill="#ffffff" fill-opacity="0.28" stroke="#e0f2fe" stroke-width="1"/>
+                    <line x1="0" y1="-4" x2="0" y2="4" stroke="#bae6fd" stroke-width="0.9" opacity="0.6"/>
+                </g>
+
+                <!-- Hoja 17 -->
+                <g transform="translate(790, 140) rotate(10)" class="float-slow" style="animation-delay: 2.1s;">
+                    <ellipse cx="0" cy="0" rx="6" ry="13" fill="#bae6fd" fill-opacity="0.24" stroke="#e0f2fe" stroke-width="1.1"/>
+                    <line x1="0" y1="-9" x2="0" y2="9" stroke="#e0f2fe" stroke-width="0.9" opacity="0.5"/>
+                </g>
+
+                <!-- Hoja 18 -->
+                <g transform="translate(805, 115) rotate(-35)" class="float-element" style="animation-delay: 0.6s;">
+                    <ellipse cx="0" cy="0" rx="7" ry="11" fill="#ffffff" fill-opacity="0.26" stroke="#e0f2fe" stroke-width="1.1"/>
+                    <line x1="0" y1="-7" x2="0" y2="7" stroke="#bae6fd" stroke-width="0.9" opacity="0.55"/>
+                </g>
+
+                <!-- Hoja 19 -->
+                <g transform="translate(840, 65) rotate(25)" class="float-fast" style="animation-delay: 1.3s;">
+                    <ellipse cx="0" cy="0" rx="6" ry="10" fill="#e0f2fe" fill-opacity="0.23" stroke="#bae6fd" stroke-width="1"/>
+                    <line x1="0" y1="-6" x2="0" y2="6" stroke="#bae6fd" stroke-width="0.8" opacity="0.5"/>
+                </g>
+
+                <!-- Hoja 20 -->
+                <g transform="translate(875, 95) rotate(-25)" class="float-slow" style="animation-delay: 0.9s;">
+                    <ellipse cx="0" cy="0" rx="8" ry="14" fill="#ffffff" fill-opacity="0.27" stroke="#e0f2fe" stroke-width="1.2"/>
+                    <line x1="0" y1="-9" x2="0" y2="9" stroke="#bae6fd" stroke-width="1" opacity="0.6"/>
+                </g>
+
+                <!-- Hoja 21 -->
+                <g transform="translate(810, 70) rotate(45)" class="float-element" style="animation-delay: 1.8s;">
+                    <ellipse cx="0" cy="0" rx="5" ry="8" fill="#bae6fd" fill-opacity="0.21" stroke="#e0f2fe" stroke-width="0.9"/>
+                    <line x1="0" y1="-5" x2="0" y2="5" stroke="#bae6fd" stroke-width="0.7" opacity="0.5"/>
+                </g>
+
+                <!-- Hoja 22 -->
+                <g transform="translate(770, 55) rotate(-50)" class="float-fast" style="animation-delay: 0.4s;">
+                    <ellipse cx="0" cy="0" rx="6" ry="11" fill="#0ea5e9" fill-opacity="0.2" stroke="#0284c7" stroke-width="1"/>
+                    <line x1="0" y1="-7" x2="0" y2="7" stroke="#0284c7" stroke-width="0.9" opacity="0.45"/>
+                </g>
+            </g>
+
+            <!-- Estrellas brillantes (destellos sutiles) -->
+            <g opacity="0.4">
+                <!-- Estrella 1 -->
+                <g transform="translate(635, 25)" class="float-element">
+                    <path d="M 0,-5 L 1,0 L 6,1 L 1.5,3 L 2,8 L 0,5 L -2,8 L -1.5,3 L -6,1 L -1,0 Z" 
+                          fill="#22d3ee" opacity="0.6"/>
+                </g>
+
+                <!-- Estrella 2 -->
+                <g transform="translate(775, 145)" class="float-slow" style="animation-delay: 1.8s;">
+                    <path d="M 0,-4 L 0.8,0 L 5,0.8 L 1.2,2.5 L 1.5,6.5 L 0,4 L -1.5,6.5 L -1.2,2.5 L -5,0.8 L -0.8,0 Z" 
+                          fill="#0ea5e9" opacity="0.5"/>
+                </g>
+
+                <!-- Estrella 3 -->
+                <g transform="translate(820, 55)" class="float-fast" style="animation-delay: 0.3s;">
+                    <path d="M 0,-6 L 1.2,0 L 7,1.2 L 2,4 L 2.5,10 L 0,6 L -2.5,10 L -2,4 L -7,1.2 L -1.2,0 Z" 
+                          fill="#e0f2fe" opacity="0.7"/>
+                </g>
+            </g>
+
+            <!-- Puntos decorativos (confetti) -->
+            <g opacity="0.3">
+                <circle cx="565" cy="55" r="2.5" fill="#38bdf8" class="float-element"/>
+                <circle cx="595" cy="110" r="3" fill="#0ea5e9" class="float-slow" style="animation-delay: 1s;"/>
+                <circle cx="655" cy="80" r="2" fill="#7dd3fc" class="float-fast" style="animation-delay: 0.5s;"/>
+                <circle cx="705" cy="35" r="2.5" fill="#22d3ee" class="float-element" style="animation-delay: 1.5s;"/>
+                <circle cx="785" cy="100" r="3" fill="#bae6fd" class="float-slow" style="animation-delay: 0.8s;"/>
+                <circle cx="840" cy="45" r="2" fill="#e0f2fe" class="float-fast"/>
+                <circle cx="870" cy="120" r="2.5" fill="#ffffff" class="float-element" style="animation-delay: 1.2s;"/>
+            </g>
+
+            <!-- Burbujas glassmorphism sobre las olas -->
+            <g transform="translate(660, 110)" class="float-element" style="animation-delay: 1s;">
+                <circle cx="40" cy="40" r="16" fill="#ffffff" fill-opacity="0.15" stroke="#e0f2fe" stroke-width="1.5"/>
+                <circle cx="34" cy="34" r="3" fill="#ffffff" opacity="0.6"/>
+                <circle cx="65" cy="25" r="8" fill="#ffffff" fill-opacity="0.1" stroke="#e0f2fe" stroke-width="1"/>
+            </g>
+
+            <!-- Ondas decorativas sutiles -->
+            <g opacity="0.2" stroke-width="1.5" fill="none" stroke-linecap="round">
+                <path d="M 560,145 Q 580,140 600,145" stroke="#7dd3fc" class="float-element"/>
+                <path d="M 690,60 Q 710,55 730,60" stroke="#38bdf8" class="float-slow" style="animation-delay: 1.3s;"/>
+                <path d="M 810,95 Q 830,90 850,95" stroke="#bae6fd" class="float-fast" style="animation-delay: 0.7s;"/>
+            </g>
+
+            <!-- === ICONOS FLOTANTES (PASTEL Y CORAZÓN) === -->
+            <!-- Pastel de Cumpleaños -->
+            <g transform="translate(660, 15)">
+                <g filter="url(#shadow)">
+                    <!-- Llama -->
+                    <ellipse cx="40" cy="15" rx="4" ry="7" fill="#fbbf24" opacity="0.8"/>
+                    <ellipse cx="40" cy="15" rx="2.5" ry="5" fill="#fef3c7"/>
+                    
+                    <!-- Vela en pastel -->
+                    <rect x="37" y="20" width="6" height="15" rx="1" fill="#0ea5e9"/>
+                    
+                    <!-- Capa superior -->
+                    <ellipse cx="40" cy="35" rx="25" ry="6" fill="#22d3ee"/>
+                    <rect x="15" y="35" width="50" height="12" fill="#0ea5e9"/>
+                    <ellipse cx="40" cy="47" rx="25" ry="6" fill="#0284c7"/>
+                    
+                    <!-- Capa inferior -->
+                    <rect x="10" y="47" width="60" height="15" fill="#0ea5e9"/>
+                    <ellipse cx="40" cy="62" rx="30" ry="6" fill="#0284c7"/>
+                    
+                    <!-- Decoración -->
+                    <circle cx="25" cy="40" r="2" fill="#ffffff" opacity="0.6"/>
+                    <circle cx="40" cy="42" r="2" fill="#ffffff" opacity="0.6"/>
+                    <circle cx="55" cy="40" r="2" fill="#ffffff" opacity="0.6"/>
+                    <circle cx="20" cy="54" r="2" fill="#ffffff" opacity="0.6"/>
+                    <circle cx="35" cy="56" r="2" fill="#ffffff" opacity="0.6"/>
+                    <circle cx="50" cy="54" r="2" fill="#ffffff" opacity="0.6"/>
+                    <circle cx="65" cy="56" r="2" fill="#ffffff" opacity="0.6"/>
+                </g>
+            </g>
+
+            <!-- Corazón Solidario -->
+            <g transform="translate(760, 105)">
+                <g filter="url(#shadow)">
+                    <!-- Corazón -->
+                    <path d="M 40,65 Q 15,45 15,30 Q 15,20 22,15 Q 28,10 35,15 Q 38,17 40,22 Q 42,17 45,15 Q 52,10 58,15 Q 65,20 65,30 Q 65,45 40,65 Z" 
+                          fill="#0ea5e9" stroke="#0284c7" stroke-width="2.5"/>
+                    
+                    <!-- Brillo -->
+                    <ellipse cx="30" cy="28" rx="6" ry="10" fill="#ffffff" opacity="0.4" transform="rotate(-25 30 28)"/>
+                    
+                    <!-- Cruz médica -->
+                    <rect x="37" y="32" width="6" height="18" rx="1" fill="#ffffff" opacity="0.9"/>
+                    <rect x="31" y="38" width="18" height="6" rx="1" fill="#ffffff" opacity="0.9"/>
+                    
+                    <!-- Pulso/ECG decorativo -->
+                    <path d="M 25,55 L 28,55 L 30,50 L 32,60 L 34,55 L 37,55" 
+                          stroke="#22d3ee" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                </g>
+            </g>
+
+        </svg>
+    </div>
+</body>
+</html>
